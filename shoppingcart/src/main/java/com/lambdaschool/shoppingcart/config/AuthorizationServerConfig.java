@@ -18,7 +18,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     static final String CLIENT_SECRET = System.getenv("OAUTHCLIENTSECRET");
     static final String GRANT_TYPE_PASSWORD = "password";
     static final String AUTHORIZATION_CODE = "authorization_code";
-    static final String SCOPE_WRITE = "wriet";
+    static final String SCOPE_WRITE = "write";
     static final String SCOPE_READ = "read";
     static final String TRUST = "trust";
     static final int ACCESS_TOKEN_VALIDITY_SECONDS = -1;
@@ -39,7 +39,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret(encoder.encode(CLIENT_SECRET))
                 .authorizedGrantTypes(GRANT_TYPE_PASSWORD, AUTHORIZATION_CODE)
                 .scopes(SCOPE_WRITE, SCOPE_READ, TRUST)
-                .accessTokenValiditySeconds(ACCESS_TOKEN_VALIDITY_SECONDS)
+                .accessTokenValiditySeconds(ACCESS_TOKEN_VALIDITY_SECONDS);
     }
 
     @Override
